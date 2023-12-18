@@ -8,7 +8,7 @@ const uint8_t BASE_SERVO_PIN = 11;
 // Define servo angles for init/default position
 const uint8_t CLAW_DEFAULT_DEG = 90;  //initialize the angle value of claw servo 1
 const uint8_t ARM_DEFAULT_DEG  = 135; //initialize the angle value of arm servo 2
-const uint8_t BASE DEFAULT_DEG = 90;  //initialize the angle value of base servo 3
+const uint8_t BASE_DEFAULT_DEG = 90;  //initialize the angle value of base servo 3
 
 // Define pins used for motor
 const uint8_t MTR_A_DIR = 2; // Forward or reverse - Digital
@@ -43,7 +43,7 @@ void loop() {
   clawServo.write(180); // close the claw
   delay(200);
 
-  clawServo.write(CLAW_SERVO_DEFAULT);  // set claw to default position
+  clawServo.write(CLAW_SERVO_DEG);  // set claw to default position
   delay(200);
 
   armServo.write(0);  // lower arm to lowest point
@@ -52,7 +52,7 @@ void loop() {
   armServo.write(180); // raise arm to highest poin
   delay(200);
 
-  armServo.write(ARM_SERVO_DEFAULT); // return claw to default position
+  armServo.write(ARM_SERVO_DEG); // return claw to default position
   delay(200);
 
   baseServo.write(0);  // rotate base to left
@@ -61,7 +61,7 @@ void loop() {
   baseServo.write(180);  // rotate base to right
   delay(200);
 
-  baseServo.write(BASE_SERVO_DEFAULT);  // return base to default position
+  baseServo.write(BASE_SERVO_DEG);  // return base to default position
   delay(200);
 
   // Move forward for 500ms then stop
